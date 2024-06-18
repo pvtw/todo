@@ -1,7 +1,7 @@
 
 <main>
-    <app-todo-form/>
+    <app-todo-form (submitted)="addTodo($event)"/>
     <div class="mt-4">
-        <app-todo *ngFor="let todo of todos" [todo]="todo"></app-todo>
+        <app-todo *ngFor="let todo of todos" [todo]="todo" (dblclicked)="toggleCompleted(todo)"></app-todo>
     </div>
 </main>

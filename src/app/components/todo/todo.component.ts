@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Todo } from '../../interfaces/todo';
 
 @Component({
@@ -10,4 +10,9 @@ import { Todo } from '../../interfaces/todo';
 })
 export class TodoComponent {
   @Input() todo!: Todo;
+  @Output() dblclicked: EventEmitter<Todo> = new EventEmitter();
+
+  public onDblclick(todo: Todo): void {
+    this.dblclicked.emit(todo);
+  }
 }
