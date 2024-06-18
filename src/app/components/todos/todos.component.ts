@@ -3,12 +3,14 @@ import { Todo } from '../../interfaces/todo';
 import { Subject } from 'rxjs';
 import { TodoComponent } from '../todo/todo.component';
 import { NgFor } from '@angular/common';
+import { TodoFormComponent } from '../todo-form/todo-form.component';
 
 @Component({
   selector: 'app-todos',
   standalone: true,
   imports: [
     TodoComponent,
+    TodoFormComponent,
     NgFor,
   ],
   templateUrl: './todos.component.html',
